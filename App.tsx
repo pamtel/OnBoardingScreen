@@ -1,45 +1,29 @@
 import React from 'react';
-// import type { PropsWithChildren } from 'react';
 import { StyleSheet, Text, View, Image, Dimensions } from 'react-native';
 import Swiper from 'react-native-swiper'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 
-// type SectionProps = PropsWithChildren<{
-//   title: string;
-// }>;
 
-// function Section({ children, title }: SectionProps): JSX.Element {
-//   const isDarkMode = useColorScheme() === 'dark';
-//   return (
-//     <View style={styles.sectionContainer}>
-//       <Text
-//         style={[
-//           styles.sectionTitle,
-//           {
-//             color: isDarkMode ? Colors.white : Colors.black,
-//           },
-//         ]}>
-//         {title}
-//       </Text>
-//       <Text
-//         style={[
-//           styles.sectionDescription,
-//           {
-//             color: isDarkMode ? Colors.light : Colors.dark,
-//           },
-//         ]}>
-//         {children}
-//       </Text>
-//     </View>
-//   );
-// }
 const w: number = Dimensions.get('window').width;
 const h: number = Dimensions.get('window').height;
 
 function App(): JSX.Element {
 
   return (
-    <Swiper buttonWrapperStyle={{ backgroundColor: "transparent", flexDirection: "row", position: "absolute", bottom: 0, left: 0, flex: 1, paddingHorizontal: 30, paddingVertical: 20, justifyContent: "flex-end", alignItems: "flex-end" }} style={styles.container} showsButtons={true}
+    <Swiper buttonWrapperStyle={{
+      backgroundColor: "transparent",
+      flexDirection: "row",
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      flex: 1,
+      paddingHorizontal: 30,
+      paddingVertical: 20,
+      justifyContent: "flex-end",
+      alignItems: "flex-end"
+    }}
+      showsButtons={true}
+      style={styles.wrapper}
       paginationStyle={{
         marginRight: w * 0.7,
         marginBottom: h * 0.02,
@@ -77,19 +61,46 @@ function App(): JSX.Element {
       }
     >
       <View style={styles.slide}>
-        <Text>Hello world</Text>
+        <Image source={require('./assets/images/img1.png')} style={styles.img} />
+        <Text style={styles.title}>Meet Up UI-Kit</Text>
+        <Text style={styles.text}>When I was 5 years old, my mother always told me that happiness was
+          the key to life. When I went to school, they asked me what I wanted
+          to be when I grew up.</Text>
+      </View>
+      <View style={styles.slide}>
+        <Image source={require("./assets/images/img2.png")} style={styles.img} />
+        <Text style={styles.title}>Discover</Text>
+        <Text style={styles.text}>
+          When I was 5 years old, my mother always told me that happiness was
+          the key to life. When I went to school, they asked me what I wanted
+          to be when I grew up.
+        </Text>
+      </View>
+
+      <View style={styles.slide}>
+        <Image source={require("./assets/images/img3.png")} style={styles.img} />
+        <Text style={styles.title}>Get Started</Text>
+        <Text style={styles.text}>
+          When I was 5 years old, my mother always told me that happiness was
+          the key to life. When I went to school, they asked me what I wanted
+          to be when I grew up.
+        </Text>
+      </View>
+      <View style={styles.slide}>
+        <Image source={require("./assets/images/img4.png")} style={styles.img} />
+        <Text style={styles.title}>Welcome</Text>
+        <Text style={styles.text}>
+          When I was 5 years old, my mother always told me that happiness was
+          the key to life. When I went to school, they asked me what I wanted
+          to be when I grew up.
+        </Text>
       </View>
     </ Swiper>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  wrapper: {},
   slide: {
     flex: 1,
     paddingTop: 80,
